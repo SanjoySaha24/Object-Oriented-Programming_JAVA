@@ -1,0 +1,53 @@
+import java.io.*;
+
+class Rectangle{
+	int length, breadth;
+	Rectangle(int l, int b){
+		length = l;
+		breadth = b;
+	}
+	public double area(){
+		return length*breadth;
+	}
+}
+
+class Square{
+	int side;
+	Square(int a){
+		side = a;
+	}
+	public double area(){
+		return side*side;
+	}
+}
+
+class Circle{
+	int radius;
+	Circle(int r){
+		radius = r;
+	}
+	public double area(){
+		return 3.14*radius*radius;
+	}
+}
+
+class Area{
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter the length and breadth of rectangle");
+		int l = Integer.parseInt(br.readLine());
+		int b = Integer.parseInt(br.readLine());
+		Rectangle r = new Rectangle(l, b);
+		System.out.println("The area of Rectangle is: "+ r.area() + " Sq. units\n");
+
+		System.out.println("Enter the radius of circle");
+		int rad = Integer.parseInt(br.readLine());
+		Circle c = new Circle(rad);
+		System.out.println("The area of Circle is: "+ c.area() + " Sq. units\n");
+		
+		System.out.println("Enter the side length of square");
+		int a = Integer.parseInt(br.readLine());
+		Square s = new Square(a);
+		System.out.println("The area of Square is: "+ s.area() + " Sq. units");
+	}
+}

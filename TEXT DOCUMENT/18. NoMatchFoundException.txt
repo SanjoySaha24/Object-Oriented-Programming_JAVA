@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+
+class NoMatchFoundException extends Exception{
+    public String toString(){
+        return "No Match Found";
+    }
+}
+
+class FindCity{
+    public static void main(String[] args) throws NoMatchFoundException {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of Cities");
+        int n = sc.nextInt();
+        String[] cities = new String[n];
+        System.out.println("Enter the city names:");
+        for(int i=0;i<n;i++){
+            cities[i] = sc.next();
+        }
+        boolean flag = false;
+        System.out.println("Enter the city name to find");
+        String find = sc.next();
+        for(int i=0;i<n;i++){
+            if(cities[i].equalsIgnoreCase(find)){
+                flag = true;
+                break;
+            }
+        }
+        try{
+            if(flag==false){
+                throw new NoMatchFoundException();
+            }
+            else{
+                System.out.println(find + " found");
+            }
+        }catch(NoMatchFoundException ex){
+            System.out.println("NoMatchFoundException Error");
+        }
+    }
+}

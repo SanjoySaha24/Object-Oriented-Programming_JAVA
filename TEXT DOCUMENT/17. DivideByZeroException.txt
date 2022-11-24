@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+class DivideByZeroExc{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter two numbers: ");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        double quotient = -9999;
+        try{
+            quotient = a/b;
+        }catch(Exception ex){
+        }finally{
+            if(quotient==-9999 || quotient==Double.POSITIVE_INFINITY){
+                System.out.println("Exception Occured");
+            }
+            else{
+                System.out.println("The quotient is: " + quotient);
+            }
+        }
+        sc.close();
+    }
+}

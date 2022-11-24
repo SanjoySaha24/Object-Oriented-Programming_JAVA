@@ -1,0 +1,21 @@
+import java.util.*;
+
+class PrimeInRange{
+    public static void main(String[] args) {
+        int n = Integer.parseInt(args[0]);
+        int m = Integer.parseInt(args[1]);
+        boolean flag = true;
+        for(int i=n;i<=m;i++){
+            for(int j=2;j*j<=i;j++){
+                if(i%j==0){
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag){
+                System.out.print(i + " ");
+            }
+            flag = true;
+        }
+    }
+}

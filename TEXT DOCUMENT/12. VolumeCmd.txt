@@ -1,0 +1,43 @@
+import java.io.*;
+
+class Volume{
+	public double vol(int a){
+		return a*a*a;
+	}
+	public double vol(int r, int h){
+		return 3.14*r*r*h;
+	}
+	public double vol(int a, int b, int c){
+		return (4/3)*3.14*a*b*c;
+	}
+}
+
+class VolumeCmd{
+	public static void main(String[] args) {
+		Volume v = new Volume();
+
+		for(int i=0;i<args.length;i++){
+			if(args[i].equalsIgnoreCase("Cube")){
+				i++;
+				int side = Integer.parseInt(args[i]);
+				System.out.println("The volume of Cube is: " + v.vol(side) + " cubic units\n");
+			}
+			else if(args[i].equalsIgnoreCase("Cylinder")){
+				i++;
+				int h = Integer.parseInt(args[i]);
+				i++;
+				int r = Integer.parseInt(args[i]);
+				System.out.println("The volume of Cylinder is: " + v.vol(r, h) + " cubic units\n");
+			}
+			else if(args[i].equalsIgnoreCase("Ellipsoid")){
+				i++;
+				int a = Integer.parseInt(args[i]);
+				i++;
+				int b = Integer.parseInt(args[i]);
+				i++;
+				int c = Integer.parseInt(args[i]);
+				System.out.println("The volume of Ellipsoid is: " + v.vol(a, b, c) + " cubic units");
+			}
+		}
+	}
+}

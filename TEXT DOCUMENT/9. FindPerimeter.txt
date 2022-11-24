@@ -1,0 +1,44 @@
+import java.util.*;
+class Circle{
+	int radius;
+	Circle(int r){
+		this.radius = r;
+	}
+	public double perimeter(){
+		return (2*3.14*(this.radius));
+	}
+}
+class Rectangle{
+	int length, breadth;
+	Rectangle(int l, int b){
+		this.length = l;
+		this.breadth = b;
+	}
+	public int perimeter(){
+		return (2*(this.length + this.breadth));
+	}
+}
+class Square{
+	int side;
+	Square(int a){
+		this.side = a;
+	}
+	public int perimeter(){
+		return (4*(this.side));
+	}
+}
+
+class FindPeri{
+	public static void main(String[] args) {
+		int rectangleLength = Integer.parseInt(args[1]);
+		int rectangleBreadth = Integer.parseInt(args[2]);
+		int circleRadius = Integer.parseInt(args[4]);
+		int squareSide = Integer.parseInt(args[6]);
+		Rectangle r = new Rectangle(rectangleLength, rectangleBreadth);
+		Circle c = new Circle(circleRadius);
+		Square s = new Square(squareSide);
+		System.out.println("The perimeter of the rectangle is: " + r.perimeter());
+		System.out.println("The perimeter of the circle is: " + c.perimeter());
+		System.out.println("The perimeter of the square is: " + s.perimeter());
+	}
+}

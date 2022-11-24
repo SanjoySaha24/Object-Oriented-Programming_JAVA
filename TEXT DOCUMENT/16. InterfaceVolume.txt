@@ -1,0 +1,27 @@
+import java.util.*;
+interface Volume{
+    public void inVolume(double s1, double s2, double s3);
+    public void outVolume(double s1, double s2, double s3);
+}
+
+class InterfaceExample implements Volume{
+    public void inVolume(double s1, double s2, double s3){
+        double ans = (3.14*s1*s2*s3)/3.0;
+        System.out.println("The InVolume is: " + ans);
+    }
+    public void outVolume(double s1, double s2, double s3){
+        double ans = (4.0/3.0)*(3.14*s1*s2*s3);
+        System.out.println("The OutVolume is: " + ans);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        InterfaceExample ob = new InterfaceExample();
+        System.out.println("Enter the three dimension: ");
+        double s1 = sc.nextDouble();
+        double s2 = sc.nextDouble();
+        double s3 = sc.nextDouble();
+        ob.inVolume(s1,s2,s3);
+        ob.outVolume(s1,s2,s3);
+        sc.close();
+    }
+}

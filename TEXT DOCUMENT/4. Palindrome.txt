@@ -1,0 +1,22 @@
+import java.util.*;
+public class Palindrome{
+	public static void main(String[] args) {
+		String s = args[0];
+		int l = s.length();
+		int i = 0;
+		boolean flag = true;
+		while(i<(l/2)){
+			if(s.charAt(i)!=s.charAt(l-i-1)){
+				flag = false;
+				break;
+			}
+			i++;
+		}
+		if(flag){
+			System.out.println("Palindrome");
+		}
+		else{
+			System.out.println("Not a Palindrome");
+		}
+	}
+}

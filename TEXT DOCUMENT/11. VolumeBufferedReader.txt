@@ -1,0 +1,35 @@
+import java.io.*;
+
+class Volume{
+	public double vol(int a){
+		return a*a*a;
+	}
+	public double vol(int r, int h){
+		return 3.14*r*r*h;
+	}
+	public double vol(int a, int b, int c){
+		return (4/3)*3.14*a*b*c;
+	}
+}
+
+class VolumeBuff{
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Volume v = new Volume();
+		System.out.println("Enter the side length of cube");
+		int side = Integer.parseInt(br.readLine());
+		System.out.println("The volume of Cube is: " + v.vol(side) + " cubic units\n");
+
+		System.out.println("Enter the height and radius of cylinder");
+		int h = Integer.parseInt(br.readLine());
+		int r = Integer.parseInt(br.readLine());
+		System.out.println("The volume of Cylinder is: " + v.vol(r, h) + " cubic units\n");
+
+		System.out.println("Enter the dimensions of ellipsoid");
+		int a = Integer.parseInt(br.readLine());
+		int b = Integer.parseInt(br.readLine());
+		int c = Integer.parseInt(br.readLine());
+		System.out.println("The volume of Ellipsoid is: " + v.vol(a, b, c) + " cubic units");
+		
+	}
+}
